@@ -67,12 +67,32 @@
                     <compilerArgument>-Werror</compilerArgument>
                 </configuration>
             </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <version>${maven.surefire.version}</version>-->
+<!--                <configuration>-->
+<!--                    <argLine>-Dfile.encoding=UTF-8</argLine>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven.surefire.version}</version>
+                <version>2.22.2</version>
+                <!-- ************************ Running the parallel runner with and without
+                    system property ************************ -->
+                <!-- <configuration> <includes> <include>**/ParallelBuilder.java</include>
+                    </includes> </configuration> <configuration> <includes> <include>**/ParallelRunnerWithTags.java</include>
+                    </includes> <systemProperties> <location>com/api/automation</location> <tags>@Regression</tags>
+                    </systemProperties> <rerunFailingTestsCount>2</rerunFailingTestsCount> </configuration> -->
+
+                <!-- ************************ Running the parallel runner with Karate-Config.js
+                    ************************ -->
                 <configuration>
-                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <includes>
+                        <include>**/TestRunnerReport.java</include>
+                    </includes>
+                    <rerunFailingTestsCount>2</rerunFailingTestsCount>
                 </configuration>
             </plugin>
         </plugins>
