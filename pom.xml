@@ -28,6 +28,8 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+
+
     </dependencies>
 
     <build>
@@ -56,9 +58,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
                 <configuration>
-                    <includes>
-                        <include>**/ParallelBuilderWithCucumberReport.java</include>
-                    </includes>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                 </configuration>
             </plugin>
