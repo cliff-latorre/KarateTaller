@@ -11,6 +11,6 @@ Feature: Validar un POST, calling Java Class
     And request {"name": "#(randomName)","job": "leader"}
     And method post
     Then status 201
-    And match response.name == "Cliff"
+    And match response.name == "#(randomName)"
     And print response
 
