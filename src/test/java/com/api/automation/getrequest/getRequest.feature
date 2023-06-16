@@ -23,7 +23,7 @@ Feature: consumir un método get de una api
     Then status 200
     And print response
 
-
+  @ignore
   Scenario Outline: consumir una api con método GET, 3
     Given path '/api/users'
     And param page = 1

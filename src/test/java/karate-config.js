@@ -6,13 +6,22 @@ function fn() {
   }
   var config = {
     env: env,
-    myVarName: 'someValue'
+    myVarName: 'someValue',
+    username: 'admin',
+    password: 'adminpassword',
+
+    Myurl: 'https://reqres.in'
   }
-  if (env == 'dev') {
+  if (env == 'local') {
     // customize
     // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
+    config.username = 'user';
+    config.password = 'userpassword';
+  } else if (env == 'dev') {
     // customize
   }
+  else if (env == 'certi') {
+      // customize
+    }
   return config;
 }

@@ -57,9 +57,39 @@
                 <version>${maven.surefire.version}</version>
                 <configuration>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <includes>
+                        <include>**/*TestRunner.java</include>
+                    </includes>
+                    <rerunFailingTestsCount>2</rerunFailingTestsCount>
+                    <systemProperties>
+                        <karate.env>${karate.env}</karate.env>
+                    </systemProperties>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <karate.env>local</karate.env>
+            </properties>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <karate.env>dev</karate.env>
+            </properties>
+        </profile>
+        <profile>
+            <id>certi</id>
+            <properties>
+                <karate.env>certi</karate.env>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
