@@ -13,4 +13,3 @@ https://mvnrepository.com/search?q=karate
 https://www.youtube.com/watch?v=gQCQdcrz7LQ
 Comparando Karate vs REST: https://docs.google.com/document/d/1ETTrdMVcBXaPjdKY-_67zCWBsi2Ctc5DIQUIfr02H7A/edit 
 
-
